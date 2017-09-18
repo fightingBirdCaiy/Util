@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+    >
+
+    <View
+            android:id="@+id/immersive_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#0066CC"
+    />
+
+    <Button
+            android:id="@+id/density_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="点我获取屏幕密度"
+    />
+
+    <Button
+            android:id="@+id/popup_window"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="popup window"
+    />
+
+    <Button
+            android:id="@+id/open_immersive"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开沉浸式"
+    />
+
+    <Button
+            android:id="@+id/close_immersive"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="关闭沉浸式"
+    />
+
+</LinearLayout>
