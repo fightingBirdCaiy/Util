@@ -17,16 +17,18 @@ public class OuterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private static final String TAG = "TAG";
 
     private Context mContext;
+    private RecyclerView mRecyclerView;
 
-    public OuterAdapter(Context context) {
+    public OuterAdapter(Context context,RecyclerView recyclerView) {
         this.mContext = context;
+        this.mRecyclerView = recyclerView;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i(TAG,"OuterAdapter onCreateViewHolder方法调用了");
         View rootView = LayoutInflater.from(mContext).inflate(OuterViewHolder.getLayoutId(),parent,false);
-        OuterViewHolder outerViewHolder = new OuterViewHolder(rootView,mContext);
+        OuterViewHolder outerViewHolder = new OuterViewHolder(rootView,mContext,mRecyclerView);
         return outerViewHolder;
     }
 

@@ -25,9 +25,9 @@ public class RecyclerActivity extends Activity{
 
     private void initView() {
         mRecyclerView = (RecyclerView)findViewById(R.id.main_rv);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        CustomLinearLayoutManager layoutManager = new CustomLinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerAdaper = new OuterAdapter(this);
+        mRecyclerAdaper = new OuterAdapter(this,mRecyclerView);
         mRecyclerView.setAdapter(mRecyclerAdaper);
     }
 }
