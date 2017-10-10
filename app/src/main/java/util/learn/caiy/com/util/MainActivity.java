@@ -1,6 +1,7 @@
 package util.learn.caiy.com.util;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+import util.learn.caiy.com.recyclerview.RecyclerActivity;
 
 public class MainActivity extends Activity {
 
@@ -68,15 +70,17 @@ public class MainActivity extends Activity {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                 getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
                 showOrHideImmersiveView(false);
-
             }
         });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
+        View recyclerView = findViewById(R.id.recyclerview_btn);
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recyclerActivityIntent = new Intent(MainActivity.this, RecyclerActivity.class);
+                startActivity(recyclerActivityIntent);
+            }
+        });
     }
 
     private void showOrHideImmersiveView(boolean show){
@@ -94,7 +98,7 @@ public class MainActivity extends Activity {
         mImmersiveTitleView.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mImmersiveTitleView.requestLayout();//防止布局未刷新成最新的
+//                mImmersiveTitleView.requestLayout();//防止布局未刷新成最新的
             }
         },200);
     }
