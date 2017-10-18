@@ -51,4 +51,11 @@
             android:text="打开RecyclerActivity"
     />
 
+    <Button
+            android:id="@+id/custom_view_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开CustomViewActivity"
+    />
+
 </LinearLayout>

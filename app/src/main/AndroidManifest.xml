@@ -22,6 +22,7 @@
         </activity>
 
         <activity android:name="util.learn.caiy.com.recyclerview.RecyclerActivity"/>
+        <activity android:name="util.learn.caiy.com.view.CustomViewActivity"/>
 
     </application>
 

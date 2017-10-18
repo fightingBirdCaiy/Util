@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
+import util.learn.caiy.com.view.CustomViewActivity;
 
 public class MainActivity extends Activity {
 
@@ -78,6 +79,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent recyclerActivityIntent = new Intent(MainActivity.this, RecyclerActivity.class);
+                startActivity(recyclerActivityIntent);
+            }
+        });
+
+        View customViewActivity = findViewById(R.id.custom_view_btn);
+        customViewActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recyclerActivityIntent = new Intent(MainActivity.this, CustomViewActivity.class);
                 startActivity(recyclerActivityIntent);
             }
         });
