@@ -16,6 +16,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
 import util.learn.caiy.com.view.CustomViewActivity;
+import util.learn.caiy.com.view.TextViewPaddingActivity;
 
 public class MainActivity extends Activity {
 
@@ -88,6 +89,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent recyclerActivityIntent = new Intent(MainActivity.this, CustomViewActivity.class);
+                startActivity(recyclerActivityIntent);
+            }
+        });
+
+        View textViewPaddingActivity = findViewById(R.id.text_view_padding_btn);
+        textViewPaddingActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recyclerActivityIntent = new Intent(MainActivity.this, TextViewPaddingActivity.class);
                 startActivity(recyclerActivityIntent);
             }
         });

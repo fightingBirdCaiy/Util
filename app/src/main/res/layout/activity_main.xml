@@ -58,4 +58,11 @@
             android:text="打开CustomViewActivity"
     />
 
+    <Button
+            android:id="@+id/text_view_padding_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开TextViewPaddingActivity"
+    />
+
 </LinearLayout>
