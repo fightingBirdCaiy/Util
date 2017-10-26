@@ -42,7 +42,9 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 float density = getResources().getDisplayMetrics().density;
-                Toast.makeText(MainActivity.this,"屏幕密度比是:" + density,Toast.LENGTH_SHORT).show();
+                int width = ToolUtil.getWidth(MainActivity.this);
+                int height = ToolUtil.getHeight(MainActivity.this);
+                Toast.makeText(MainActivity.this,"屏幕宽度:" +  width + ",屏幕高度:" + height + "，屏幕密度比是:" + density,Toast.LENGTH_LONG).show();
             }
         });
 
