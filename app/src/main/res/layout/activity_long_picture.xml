@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/root_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+    >
+
+        <LinearLayout
+                android:id="@+id/content_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+        >
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="锄禾日当午\n汗滴禾下土\n"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+            />
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher_round"
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="谁知盘中餐\n粒粒皆辛苦"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+            />
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher_round"
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="不识庐山真面目\n只缘生在此山中"
+                    android:maxLines="4"
+                    android:ellipsize="end"
+            />
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher_round"
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="春眠不觉晓\n处处闻啼鸟"
+                    android:maxLines="4"
+                    android:ellipsize="end"
+            />
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher_round"
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="笑问客从何处来\n牧童遥指杏花村"
+                    android:maxLines="4"
+                    android:ellipsize="end"
+            />
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher_round"
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="有时候我觉得自己像一只小小鸟
+想要飞 却怎么样也飞不高
+也许有一天我栖上了枝头
+却成为猎人的目标
+我飞上了青天才发现
+自己从此无依无靠
+每次到了夜深人静的时候
+我总是睡不着
+我怀疑是不是只有我的明天
+没有变得更好
+未来会怎样究竟有谁会知道
+幸福是否只是一种传说
+我永远都找不到
+我是一只小小小小鸟
+想要飞呀飞却飞也飞不高
+我寻寻觅觅寻寻觅觅
+一个温暖的怀抱
+这样的要求算不算太高
+我是一只小小小小鸟
+想要飞呀飞却飞也飞不高
+我寻寻觅觅寻寻觅觅
+一个温暖的怀抱
+这样的要求算不算太高
+所有知道我的名字的人啊
+你们好不好
+世界是如此的小
+我们注定无处可逃
+当我尝尽人情冷暖
+当你决定为你了的理想燃烧
+生活的压力与生命的尊严
+哪一个重要
+我是一只小小小小鸟
+想要飞呀飞却飞也飞不高
+我寻寻觅觅寻寻觅觅
+一个温暖的怀抱
+这样的要求算不算太高
+我是一只小小小小鸟
+想要飞呀飞却飞也飞不高
+我寻寻觅觅寻寻觅觅
+一个温暖的怀抱
+这样的要求算不算太高
+我是一只小小小小鸟
+想要飞呀飞却飞也飞不高
+一个温暖的怀抱
+这样的要求算不算太高
+这样的要求算不算太高"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher_round"
+            />
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="以下是生成的长图"
+        />
+        <ImageView
+                android:id="@+id/generated_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        />
+
+    </LinearLayout>
+</ScrollView>

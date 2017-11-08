@@ -24,6 +24,7 @@
         <activity android:name="util.learn.caiy.com.recyclerview.RecyclerActivity"/>
         <activity android:name="util.learn.caiy.com.view.CustomViewActivity"/>
         <activity android:name="util.learn.caiy.com.view.TextViewPaddingActivity"/>
+        <activity android:name="util.learn.caiy.com.view.LongPictureActivity"/>
 
     </application>
 
