@@ -25,7 +25,10 @@
         <activity android:name="util.learn.caiy.com.view.CustomViewActivity"/>
         <activity android:name="util.learn.caiy.com.view.TextViewPaddingActivity"/>
         <activity android:name="util.learn.caiy.com.view.LongPictureActivity"/>
-
+        <activity
+                android:name="util.learn.caiy.com.view.InputMethodActivity"
+                android:windowSoftInputMode="adjustResize"
+        />
     </application>
 
 </manifest>

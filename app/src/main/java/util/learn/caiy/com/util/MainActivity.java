@@ -16,6 +16,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
 import util.learn.caiy.com.view.CustomViewActivity;
+import util.learn.caiy.com.view.InputMethodActivity;
 import util.learn.caiy.com.view.LongPictureActivity;
 import util.learn.caiy.com.view.TextViewPaddingActivity;
 
@@ -114,6 +115,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        View inputMethodBtn = findViewById(R.id.input_method_btn);
+        inputMethodBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent breakInfoTextViewIntent = new Intent(MainActivity.this, InputMethodActivity.class);
+                startActivity(breakInfoTextViewIntent);
+            }
+        });
     }
 
     private void showOrHideImmersiveView(boolean show){

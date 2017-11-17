@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<util.learn.caiy.com.view.ResizeRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/root_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+>
+    <EditText
+            android:id="@+id/edit_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_v"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:hint="点我测试输入法"
+
+
+    />
+    <View
+        android:id="@+id/bottom_v"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorRed"
+        android:layout_alignParentBottom="true"
+    />
+
+</util.learn.caiy.com.view.ResizeRelativeLayout>
