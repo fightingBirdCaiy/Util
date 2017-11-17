@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import util.learn.caiy.com.algorithm.EightQueensRecursive;
 import util.learn.caiy.com.util.LongPictureUtil;
 import util.learn.caiy.com.util.R;
 
@@ -36,6 +37,13 @@ public class LongPictureActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_long_picture);
         initView();
+        initData();
+    }
+
+    private void initData() {
+        EightQueensRecursive eightQueens=new EightQueensRecursive();
+        eightQueens.putQueen(0);
+        System.out.println("皇后问题一共找到了 "+EightQueensRecursive.howMany+"组解。");
     }
 
     private void initView() {
