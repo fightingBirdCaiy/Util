@@ -29,6 +29,7 @@
                 android:name="util.learn.caiy.com.view.InputMethodActivity"
                 android:windowSoftInputMode="adjustResize"
         />
+        <activity android:name="util.learn.caiy.com.view.NoMenuEditActivity"/>
     </application>
 
 </manifest>

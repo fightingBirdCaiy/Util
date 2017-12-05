@@ -18,6 +18,7 @@ import util.learn.caiy.com.recyclerview.RecyclerActivity;
 import util.learn.caiy.com.view.CustomViewActivity;
 import util.learn.caiy.com.view.InputMethodActivity;
 import util.learn.caiy.com.view.LongPictureActivity;
+import util.learn.caiy.com.view.NoMenuEditActivity;
 import util.learn.caiy.com.view.TextViewPaddingActivity;
 
 public class MainActivity extends Activity {
@@ -121,6 +122,17 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent breakInfoTextViewIntent = new Intent(MainActivity.this, InputMethodActivity.class);
                 startActivity(breakInfoTextViewIntent);
+            }
+        });
+
+
+
+        View noMenuEditBtn = findViewById(R.id.no_menu_edit_btn);
+        noMenuEditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent noMenuEditIntent = new Intent(MainActivity.this, NoMenuEditActivity.class);
+                startActivity(noMenuEditIntent);
             }
         });
     }

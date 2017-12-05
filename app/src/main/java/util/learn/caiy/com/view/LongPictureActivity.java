@@ -23,6 +23,9 @@ import util.learn.caiy.com.util.R;
  * Created by admin on 2017/11/7.
  */
 
+/**
+ * 一般生成长图都是scrollview，这个示例只展示了LinearLayout
+ */
 public class LongPictureActivity extends Activity{
 
     private static final String TAG = "LongPictureActivity";

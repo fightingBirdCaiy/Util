@@ -79,4 +79,11 @@
             android:text="打开InputMethodActivity"
     />
 
+    <Button
+            android:id="@+id/no_menu_edit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开NoMenuEditActivity"
+    />
+
 </LinearLayout>
