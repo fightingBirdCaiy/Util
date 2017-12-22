@@ -19,6 +19,7 @@ import util.learn.caiy.com.view.CustomViewActivity;
 import util.learn.caiy.com.view.InputMethodActivity;
 import util.learn.caiy.com.view.LongPictureActivity;
 import util.learn.caiy.com.view.NoMenuEditActivity;
+import util.learn.caiy.com.view.ReplaceIconActivity;
 import util.learn.caiy.com.view.TextViewPaddingActivity;
 
 public class MainActivity extends Activity {
@@ -133,6 +134,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent noMenuEditIntent = new Intent(MainActivity.this, NoMenuEditActivity.class);
                 startActivity(noMenuEditIntent);
+            }
+        });
+
+        View replaceIconBtn = findViewById(R.id.replace_icon_btn);
+        replaceIconBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent replaceIconIntent = new Intent(MainActivity.this, ReplaceIconActivity.class);
+                startActivity(replaceIconIntent);
             }
         });
     }

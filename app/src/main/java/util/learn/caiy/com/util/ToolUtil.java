@@ -3,6 +3,7 @@ package util.learn.caiy.com.util;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.WindowManager;
 
 /**
@@ -10,6 +11,8 @@ import android.view.WindowManager;
  */
 
 public class ToolUtil {
+
+    private static final String TAG = "ToolUtil";
 
     private static Screen screen = null;
 
@@ -58,6 +61,7 @@ public class ToolUtil {
             WindowManager windowManager = (WindowManager) context
                     .getSystemService(Context.WINDOW_SERVICE);
             windowManager.getDefaultDisplay().getMetrics(dm);
+            Log.i(TAG,"DisplayMetrics.toString():" + dm);
             if (dm.widthPixels > dm.heightPixels) {
                 screen = new Screen(dm.heightPixels, dm.widthPixels);
             } else {

@@ -10,6 +10,7 @@
             android:supportsRtl="true"
 
             android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity"
                   android:hardwareAccelerated="true"
                   android:screenOrientation="portrait"
@@ -21,6 +22,20 @@
             </intent-filter>
         </activity>
 
+        <activity-alias
+                android:name=".ElevenAlias"
+                android:enabled="false"
+                android:icon="@mipmap/ic_launcher_11"
+                android:roundIcon="@mipmap/ic_launcher_11_round"
+                android:label="双11"
+                android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
         <activity android:name="util.learn.caiy.com.recyclerview.RecyclerActivity"/>
         <activity android:name="util.learn.caiy.com.view.CustomViewActivity"/>
         <activity android:name="util.learn.caiy.com.view.TextViewPaddingActivity"/>
@@ -30,6 +45,7 @@
                 android:windowSoftInputMode="adjustResize"
         />
         <activity android:name="util.learn.caiy.com.view.NoMenuEditActivity"/>
+        <activity android:name="util.learn.caiy.com.view.ReplaceIconActivity"/>
     </application>
 
 </manifest>

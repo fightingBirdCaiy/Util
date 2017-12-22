@@ -86,4 +86,11 @@
             android:text="打开NoMenuEditActivity"
     />
 
+    <Button
+            android:id="@+id/replace_icon_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开ReplaceIconActivity"
+    />
+
 </LinearLayout>
