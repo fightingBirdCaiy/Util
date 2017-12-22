@@ -12,6 +12,7 @@ import util.learn.caiy.com.util.R;
 
 /**
  * Created by yongc on 2017/12/5.
+ * 参考自http://blog.csdn.net/eclipsexys/article/details/53791818
  */
 
 public class ReplaceIconActivity extends Activity{
