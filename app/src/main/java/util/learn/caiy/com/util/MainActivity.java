@@ -16,6 +16,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
 import util.learn.caiy.com.view.CustomViewActivity;
+import util.learn.caiy.com.view.DragActivity;
 import util.learn.caiy.com.view.InputMethodActivity;
 import util.learn.caiy.com.view.LongPictureActivity;
 import util.learn.caiy.com.view.NoMenuEditActivity;
@@ -142,6 +143,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent replaceIconIntent = new Intent(MainActivity.this, ReplaceIconActivity.class);
+                startActivity(replaceIconIntent);
+            }
+        });
+
+        View dragIconBtn = findViewById(R.id.drag_icon_btn);
+        dragIconBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent replaceIconIntent = new Intent(MainActivity.this, DragActivity.class);
                 startActivity(replaceIconIntent);
             }
         });

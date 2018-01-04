@@ -46,6 +46,7 @@
         />
         <activity android:name="util.learn.caiy.com.view.NoMenuEditActivity"/>
         <activity android:name="util.learn.caiy.com.view.ReplaceIconActivity"/>
+        <activity android:name="util.learn.caiy.com.view.DragActivity"/>
     </application>
 
 </manifest>
