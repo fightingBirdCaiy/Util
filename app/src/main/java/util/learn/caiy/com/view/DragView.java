@@ -64,7 +64,8 @@ public class DragView extends LinearLayout{
     }
 
     private void init(Context context){
-        mSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+//        mSlop = ViewConfiguration.get(context).getScaledTouchSlop();//距离大，拖动会闪
+        mSlop = 0;
         LayoutInflater inflater = LayoutInflater.from(context);
         setOrientation(LinearLayout.HORIZONTAL);
         mContentView = inflater.inflate(R.layout.view_drag_content,this);
@@ -83,13 +84,14 @@ public class DragView extends LinearLayout{
         int action = event.getAction();
         switch(action) {
             case MotionEvent.ACTION_DOWN:
-                mInitPointX = mLastPointX = event.getRawX();
+                mInitPointX = mLastPointX = event.getRawX();//这里不能换成getX(),否则view会抖动
                 mInitPointY = mLastPointY = event.getRawY();
                 break;
             case MotionEvent.ACTION_MOVE:
                 int deltaX = (int)(event.getRawX() - mLastPointX);
                 int deltaY = (int)(event.getRawY() - mLastPointY);
                 if ((Math.abs(deltaX) > mSlop || Math.abs(deltaY) > mSlop)) {
+                    //如果大于滑动阈值，则拦截事件(当前view的onTouchEvent事件会执行)
                     return true;
                 }
                 break;
@@ -102,9 +104,7 @@ public class DragView extends LinearLayout{
         int action = event.getAction();
         switch(action){
             case MotionEvent.ACTION_DOWN:
-                mInitPointX = mLastPointX = event.getRawX();
-                mInitPointY = mLastPointY = event.getRawY();
-
+                //onInterceptTouchEvent方法中进行了赋值操作
                 Log.i(TAG,String.format("ACTION_DOWN left=%d,top=%d",getLeft(),getTop()));
                 Log.i(TAG,String.format("ACTION_DOWN translationX=%f,translationY=%f",getTranslationX(),
                         getTranslationY()));
@@ -137,6 +137,12 @@ public class DragView extends LinearLayout{
         return true;
     }
 
+    /**
+     * 修正TranslationY
+     * 不能超出状态栏以及手机最下方
+     * @param event
+     * @return
+     */
     private float getNextTranslationY(MotionEvent event) {
         int top = getTop();
         float nextTranslationY = event.getRawY()-mInitPointY;
@@ -151,6 +157,12 @@ public class DragView extends LinearLayout{
         return nextTranslationY;
     }
 
+    /**
+     * 修正TranslationX
+     * 不能超出手机最左边和最右边
+     * @param event
+     * @return
+     */
     private float getNextTranslationX(MotionEvent event) {
         float nextTranslationX = event.getRawX() - mInitPointX;
         float minX = 0f;
@@ -163,6 +175,9 @@ public class DragView extends LinearLayout{
         return nextTranslationX;
     }
 
+    /**
+     * 平缓滑动到屏幕最左边
+     */
     private void animToStartPosition() {
 
         ObjectAnimator transXAnim = ObjectAnimator.ofFloat(this,"translationX", 0);
