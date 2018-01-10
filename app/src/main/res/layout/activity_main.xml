@@ -100,4 +100,11 @@
             android:text="打开DragActivity"
     />
 
+    <Button
+            android:id="@+id/deep_link_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开DeepLinkActivity"
+    />
+
 </LinearLayout>

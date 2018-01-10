@@ -47,6 +47,19 @@
         <activity android:name="util.learn.caiy.com.view.NoMenuEditActivity"/>
         <activity android:name="util.learn.caiy.com.view.ReplaceIconActivity"/>
         <activity android:name="util.learn.caiy.com.view.DragActivity"/>
+        <activity
+                android:name="util.learn.caiy.com.view.DeepLinkActivity"
+                android:launchMode="singleTop"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="caiyong"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name="util.learn.caiy.com.service.DragService"/>
     </application>
 
 </manifest>

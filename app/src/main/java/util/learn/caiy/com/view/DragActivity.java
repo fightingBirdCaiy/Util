@@ -1,12 +1,15 @@
 package util.learn.caiy.com.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import util.learn.caiy.com.service.DragService;
 import util.learn.caiy.com.util.R;
 import util.learn.caiy.com.util.ToolUtil;
 
@@ -40,6 +43,15 @@ public class DragActivity extends Activity{
                 Log.e(TAG,"一键返回view显示失败:decorView不是FrameLayout");
             }
         }
+
+        Button goToDragView2 = (Button)findViewById(R.id.go_to_drag_v2);
+        goToDragView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dragService = new Intent(DragActivity.this, DragService.class);
+                startService(dragService);
+            }
+        });
     }
 
     private int getTopMargin() {

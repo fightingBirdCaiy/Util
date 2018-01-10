@@ -16,6 +16,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
 import util.learn.caiy.com.view.CustomViewActivity;
+import util.learn.caiy.com.view.DeepLinkActivity;
 import util.learn.caiy.com.view.DragActivity;
 import util.learn.caiy.com.view.InputMethodActivity;
 import util.learn.caiy.com.view.LongPictureActivity;
@@ -151,8 +152,17 @@ public class MainActivity extends Activity {
         dragIconBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent replaceIconIntent = new Intent(MainActivity.this, DragActivity.class);
-                startActivity(replaceIconIntent);
+                Intent dragIconIntent = new Intent(MainActivity.this, DragActivity.class);
+                startActivity(dragIconIntent);
+            }
+        });
+
+        View deepLinkBtn = findViewById(R.id.deep_link_btn);
+        deepLinkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent deepLinkIntent = new Intent(MainActivity.this, DeepLinkActivity.class);
+                startActivity(deepLinkIntent);
             }
         });
     }

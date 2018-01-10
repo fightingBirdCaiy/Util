@@ -6,22 +6,13 @@
         android:id="@+id/main_root_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
     >
 
     <Button
-            android:id="@+id/go_to_drag_v2"
+            android:id="@+id/to_jumei_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="点我 显示windowManager方式一键返回"
-    />
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textSize="30sp"
-            android:text="内容区域"
+            android:text="跳转到聚美首页"
     />
 
 

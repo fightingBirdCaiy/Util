@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
@@ -110,8 +111,10 @@ public class DragView extends LinearLayout{
                         getTranslationY()));
                 break;
             case MotionEvent.ACTION_MOVE:
-                int deltaX = (int)(event.getRawX() - mLastPointX);
-                int deltaY = (int)(event.getRawY() - mLastPointY);
+                float rawX = event.getRawX();
+                float rawY = event.getRawY();
+                int deltaX = (int)(rawX - mLastPointX);
+                int deltaY = (int)(rawY - mLastPointY);
                 if ((Math.abs(deltaX) > mSlop || Math.abs(deltaY) > mSlop)) {
                     mCurrentState = State.DRAGGING;
 
@@ -222,5 +225,17 @@ public class DragView extends LinearLayout{
 
             }
         });
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+//        Log.i(TAG,"onDraw方法调用了");
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+//        Log.i(TAG,"onLayout方法调用了");
     }
 }
