@@ -51,7 +51,7 @@ public class DeepLinkActivity extends Activity{
         final String url = "jumeimall://page/adcommon?position=home"
                 + "&link_source=caiyongApp"
                 + "&link_name=返回caiyong"
-                + "&back_url=caiyong%3a%2f%2f2018.happy.new.new.year%3fmsg1%3d%e6%96%b0%e5%b9%b4%e5%bf%ab%e4%b9%90%26msg2%3d%e4%b8%87%e4%ba%8b%e5%a4%a7%e5%90%89";
+                + "&backmode=xxl&backurl=caiyong://2018.happy.new.year?msg1=新年快乐&msg2=万事大吉";
 
         Button toJumeiButton = (Button)findViewById(R.id.to_jumei_btn);
         toJumeiButton.setOnClickListener(new View.OnClickListener() {
