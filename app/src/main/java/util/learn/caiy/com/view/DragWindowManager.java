@@ -35,7 +35,7 @@ public class DragWindowManager {
         wmParams = new WindowManager.LayoutParams();
         // 设置window type; 19以下的机型设置TYPE_PHONE才能拖动画中画
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            wmParams.type = WindowManager.LayoutParams.TYPE_TOAST;
+            wmParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
         } else {
             wmParams.type = WindowManager.LayoutParams.TYPE_PHONE;
         }

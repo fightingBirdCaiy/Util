@@ -48,7 +48,7 @@ public class DragActivity extends Activity{
         goToDragView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dragService = new Intent(DragActivity.this, DragService.class);
+                Intent dragService = new Intent(DragActivity.this.getApplicationContext(), DragService.class);
                 startService(dragService);
             }
         });

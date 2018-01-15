@@ -8,11 +8,21 @@
         android:layout_height="match_parent"
     >
 
+    <EditText
+            android:id="@+id/jump_content_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="21dp"
+            android:text=""
+    />
+
     <Button
             android:id="@+id/to_jumei_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="跳转到聚美首页"
+            android:layout_below="@+id/jump_content_et"
+            android:layout_marginTop="10dp"
+            android:text="跳转到聚美"
     />
 
 
