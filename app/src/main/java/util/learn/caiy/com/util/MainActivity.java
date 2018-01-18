@@ -19,6 +19,7 @@ import util.learn.caiy.com.view.CustomViewActivity;
 import util.learn.caiy.com.view.DeepLinkActivity;
 import util.learn.caiy.com.view.DragActivity;
 import util.learn.caiy.com.view.InputMethodActivity;
+import util.learn.caiy.com.view.ListViewCtrActivity;
 import util.learn.caiy.com.view.LongPictureActivity;
 import util.learn.caiy.com.view.NoMenuEditActivity;
 import util.learn.caiy.com.view.ReplaceIconActivity;
@@ -163,6 +164,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent deepLinkIntent = new Intent(MainActivity.this, DeepLinkActivity.class);
                 startActivity(deepLinkIntent);
+            }
+        });
+
+        View listViewCtrBtn = findViewById(R.id.list_view_ctr_btn);
+        listViewCtrBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ctrIntent = new Intent(MainActivity.this, ListViewCtrActivity.class);
+                startActivity(ctrIntent);
             }
         });
     }

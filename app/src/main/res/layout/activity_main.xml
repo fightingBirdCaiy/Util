@@ -107,4 +107,11 @@
             android:text="打开DeepLinkActivity"
     />
 
+    <Button
+            android:id="@+id/list_view_ctr_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开ListViewCtrActivity"
+    />
+
 </LinearLayout>

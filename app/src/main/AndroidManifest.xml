@@ -58,6 +58,7 @@
                 <data android:scheme="caiyong"/>
             </intent-filter>
         </activity>
+        <activity android:name="util.learn.caiy.com.view.ListViewCtrActivity"/>
 
         <service android:name="util.learn.caiy.com.service.DragService"/>
     </application>
