@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.Button;
+import android.widget.ListView;
 import util.learn.caiy.com.listview.CtrAdapter;
 import util.learn.caiy.com.listview.CtrListView;
 import util.learn.caiy.com.util.R;
@@ -20,7 +21,7 @@ public class ListViewCtrActivity extends Activity{
 
     private static final String TAG = "ListViewCtrActivity";
 
-    private CtrListView mCtrListView;
+    private ListView mCtrListView;
     private CtrAdapter mCtrAdapter;
 
     @Override
@@ -32,7 +33,7 @@ public class ListViewCtrActivity extends Activity{
     }
 
     private void initView() {
-        mCtrListView = (CtrListView)findViewById(R.id.ctr_lv);
+        mCtrListView = (ListView)findViewById(R.id.ctr_lv);
         mCtrAdapter = new CtrAdapter(this);
         mCtrListView.setRecyclerListener(mCtrAdapter.getRecyclerListener());//这句需要放在setAdapter的前面
         mCtrListView.setAdapter(mCtrAdapter);

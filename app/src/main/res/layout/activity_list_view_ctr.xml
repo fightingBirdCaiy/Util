@@ -12,12 +12,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:text="ListView的item的浏览埋点示例(item从屏幕中划出再划入屏幕就算一次浏览事件)\n1.ListView上下滑动的时候，会调用getView来获取新的item view\n2.同时会调用AbsListView.RecyclerListener的onMovedToScrapHeap方法来移除不可见的view以便下次复用\n3.基于以上两点完成埋点功能"
+            android:text="ListView的item的浏览埋点示例(item从屏幕中划出再划入屏幕就算一次浏览事件)\n
+            1.ListView上下滑动的时候，会调用getView来获取新的item view\n
+            2.同时会调用AbsListView.RecyclerListener的onMovedToScrapHeap方法来移除不可见的view以便下次复用\n
+            3.基于以上两点完成埋点功能"
             android:background="@color/colorGray"
     />
 
 
-    <util.learn.caiy.com.listview.CtrListView
+    <ListView
             android:id="@+id/ctr_lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -44,18 +44,18 @@ public class CtrAdapter extends BaseAdapter{
 
             @Override
             public void onMovedToScrapHeap(View view) {
+                //item划出屏幕的时候会被调用。view代表划出屏幕的item
                 if(view != null){
                     Object positionTag = view.getTag(R.id.statistic_position);
                     if(positionTag != null && positionTag instanceof Integer){
-                        int position = (int)positionTag;
+                        int position = (int)positionTag;//获取待移出屏幕的view的position
                         Log.i(TAG,String.format("onMovedToScrapHeap,position=%d,view=%s",position,view));
-                        StatisticRunnable statisticRunnable = getRunnableFromCache(position);
+                        StatisticRunnable statisticRunnable = getRunnableFromCache(position);//获取position位置对于的Runnable
                         if(statisticRunnable != null){
-                            view.removeCallbacks(statisticRunnable);
+                            view.removeCallbacks(statisticRunnable);//移除事件埋点
                         }
                     }
                 }
-
             }
         };
     }
@@ -76,7 +76,7 @@ public class CtrAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {//item划入屏幕的时候会被调用。
 
         Log.i(TAG,String.format("getView方法调用了:position=%d,convertView=%s,parent=%s",position,convertView,parent));
 
@@ -92,11 +92,16 @@ public class CtrAdapter extends BaseAdapter{
         holder.contentTextView.setText(mDatas.get(position));
 
         StatisticRunnable statisticRunnable = getRunnableInstance(position);
-        convertView.postDelayed(statisticRunnable,STATISTIC_DELAY);
-        convertView.setTag(R.id.statistic_position,position);
+        convertView.postDelayed(statisticRunnable,STATISTIC_DELAY);//发送一个延迟消息（1秒后进行item浏览事件的埋点）
+        convertView.setTag(R.id.statistic_position,position);//设置tag为当前position
         return convertView;
     }
 
+    /**
+     * 获取position位置对于的埋点Runnable。优先从缓存中获取；缓存中不存在则new一个并放入缓存中
+     * @param postion
+     * @return
+     */
     private StatisticRunnable getRunnableInstance(int postion){
         StatisticRunnable cachedRunnable = getRunnableFromCache(postion);
         if(cachedRunnable == null){
@@ -106,6 +111,11 @@ public class CtrAdapter extends BaseAdapter{
         return cachedRunnable;
     };
 
+    /**
+     * 从缓存中获取position位置对于的埋点Runnable
+     * @param postion
+     * @return
+     */
     private StatisticRunnable getRunnableFromCache(int postion){
         StatisticRunnable cachedRunnable = statisticRunnableMap.get(postion);
         return cachedRunnable;
@@ -129,6 +139,7 @@ public class CtrAdapter extends BaseAdapter{
 
         @Override
         public void run() {
+            //可以快速滑动ListView中的item，通过查看日志的方式判断埋点功能是否生效
             Log.i(TAG,String.format("statisticRunnable调用了:position=%d",position));
         }
     }
