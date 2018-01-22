@@ -12,6 +12,9 @@ import util.learn.caiy.com.util.R;
  * Created by admin on 2018/1/22.
  */
 
+/**
+ * 冷启动预加载的一种实现方案(StartActivity启动HomeActivity,HomeActivity启动SplashActivity,达到HomeActivity的预加载)
+ */
 public class StartActivity extends Activity{
 
     /**
