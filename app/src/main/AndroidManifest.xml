@@ -60,6 +60,17 @@
         </activity>
         <activity android:name="util.learn.caiy.com.view.ListViewCtrActivity"/>
 
+        <!-- 预加载相关 -->
+        <activity android:name="util.learn.caiy.com.activity.StartActivity"
+                  android:theme="@style/StartTheme"
+        />
+        <activity android:name="util.learn.caiy.com.activity.HomeActivity"
+                  android:theme="@style/HomeTheme"
+        />
+        <activity android:name="util.learn.caiy.com.activity.SplashActivity"
+                  android:theme="@style/SplashTheme"
+        />
+
         <service android:name="util.learn.caiy.com.service.DragService"/>
     </application>
 

@@ -3,8 +3,6 @@ package util.learn.caiy.com.util;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -14,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+import util.learn.caiy.com.activity.StartActivity;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
 import util.learn.caiy.com.view.CustomViewActivity;
 import util.learn.caiy.com.view.DeepLinkActivity;
@@ -173,6 +172,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent ctrIntent = new Intent(MainActivity.this, ListViewCtrActivity.class);
                 startActivity(ctrIntent);
+            }
+        });
+
+        View startBtn = findViewById(R.id.start_btn);
+        startBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                startActivity(intent);
             }
         });
     }

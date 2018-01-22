@@ -4,4 +4,20 @@
     <style name="AppTheme" parent="@android:style/Theme.Light.NoTitleBar">
     </style>
 
+    <style name="StartTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@mipmap/loading</item>
+    </style>
+
+    <style name="HomeTheme" parent="@android:style/Theme.Light.NoTitleBar">
+    </style>
+
+    <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>
