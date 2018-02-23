@@ -9,11 +9,12 @@
         android:orientation="vertical"
     >
 
-    <View
+    <ImageView
             android:id="@+id/immersive_title_view"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="#0066CC"
+            android:layout_height="50dp"
+            android:src="@mipmap/loading"
+            android:scaleType="centerCrop"
     />
 
     <Button
