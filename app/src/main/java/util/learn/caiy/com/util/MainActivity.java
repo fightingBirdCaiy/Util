@@ -186,25 +186,17 @@ public class MainActivity extends Activity {
     }
 
     private void showOrHideImmersiveView(boolean show){
-        int height = show ? ToolUtil.getStatusBarHeight(this) : 0;
+        int statusBarHeight = ToolUtil.getStatusBarHeight(this);
 
-        height += ToolUtil.dip2px(this,50);
+        int paddingTop = show ? statusBarHeight : 0;
+        int height = ToolUtil.dip2px(this,50) + paddingTop;
+
+        mImmersiveTitleView.setPadding(0,paddingTop,0,0);
 
         ViewGroup.LayoutParams params = mImmersiveTitleView.getLayoutParams();
         params.height = height;
         mImmersiveTitleView.setLayoutParams(params);
 
-        if(show){
-            mImmersiveTitleView.setVisibility(View.VISIBLE);
-        }else{
-            mImmersiveTitleView.setVisibility(View.VISIBLE);
-        }
-//        mImmersiveTitleView.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mImmersiveTitleView.requestLayout();//防止布局未刷新成最新的
-//            }
-//        },200);
     }
 
     private void initPopupWindow() {
