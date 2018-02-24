@@ -122,4 +122,11 @@
             android:text="打开StartActivity(冷启动预加载)"
     />
 
+    <Button
+            android:id="@+id/video_cache_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开VideoCacheActivity(变缓存边播放)"
+    />
+
 </LinearLayout>

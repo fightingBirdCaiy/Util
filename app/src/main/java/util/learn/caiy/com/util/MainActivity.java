@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 import util.learn.caiy.com.activity.StartActivity;
+import util.learn.caiy.com.activity.VideoCacheActivity;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
 import util.learn.caiy.com.view.CustomViewActivity;
 import util.learn.caiy.com.view.DeepLinkActivity;
@@ -180,6 +181,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        View videoCacheBtn = findViewById(R.id.video_cache_btn);
+        videoCacheBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, VideoCacheActivity.class);
                 startActivity(intent);
             }
         });

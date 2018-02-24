@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="util.learn.caiy.com.util">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -60,7 +64,7 @@
         </activity>
         <activity android:name="util.learn.caiy.com.view.ListViewCtrActivity"/>
 
-        <!-- 预加载相关 -->
+        <!-- 预加载相关start -->
         <activity android:name="util.learn.caiy.com.activity.StartActivity"
                   android:theme="@style/StartTheme"
         />
@@ -70,6 +74,9 @@
         <activity android:name="util.learn.caiy.com.activity.SplashActivity"
                   android:theme="@style/SplashTheme"
         />
+        <!-- 预加载相关end -->
+
+        <activity android:name="util.learn.caiy.com.activity.VideoCacheActivity"/>
 
         <service android:name="util.learn.caiy.com.service.DragService"/>
     </application>
