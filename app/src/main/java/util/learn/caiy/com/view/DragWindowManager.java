@@ -33,9 +33,14 @@ public class DragWindowManager {
         mContext = context;
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         wmParams = new WindowManager.LayoutParams();
-        // 设置window type; 19以下的机型设置TYPE_PHONE才能拖动画中画
+        // 19以下的机型设置TYPE_PHONE才能拖动画中画
+        // ANDROID N之后的版本对TYPE_PHONE进行了管控，需要改回TYPE_PHONE
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            wmParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
+            if(Build.VERSION.SDK_INT > 24){
+                wmParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+            }else{
+                wmParams.type = WindowManager.LayoutParams.TYPE_TOAST;
+            }
         } else {
             wmParams.type = WindowManager.LayoutParams.TYPE_PHONE;
         }

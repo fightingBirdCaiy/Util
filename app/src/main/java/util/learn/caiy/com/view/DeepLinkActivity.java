@@ -53,11 +53,13 @@ public class DeepLinkActivity extends Activity{
     }
 
     private void initView() {
-//        final String url = "jumeimall://page/web?url=http%3a%2f%2fh5.jumei.com%2fglobal%2fdeals%3fref%3dvivo001"
-        final String initUrl = "jumeimall://page/grouponproduct?itemid=ht171216p2171531t4zh&type=global_combination_deal"
+        String initUrl = "jumeimall://page/grouponproduct?itemid=ht171216p2171531t4zh&type=global_combination_deal"
                 + "&link_source=caiyongApp"
                 + "&link_name=返回caiyong"
                 + "&backmode=xxl&backurl=caiyong://2018.happy.new.year?msg1=新年快乐&msg2=万事大吉";
+
+        initUrl = "jumeimall://page/alldetail?itemid=ht1499411322p3160352&type=global_pop&source=toutiao&sell_label"
+                + "=xxx&selltype=xxx&sellparams=xxx&backurl=snssdk143://";
 
         jumpUrlEditText = (EditText)findViewById(R.id.jump_content_et);
         jumpUrlEditText.setText(initUrl);

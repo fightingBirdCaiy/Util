@@ -84,13 +84,15 @@ public class DragViewInWindowManager extends LinearLayout{
                 mInitInScreenX = mLastX = event.getRawX();
                 mInitInScreenY = mLastY = event.getRawY() - getStatusBarHeight();
 
-                Log.i(TAG,String.format("mInitX=%f,mInitY=%f,mLastX=%f,mLastY=%f",mInitX,mInitY,mLastX,mLastY));
+                Log.i(TAG,String.format("ACTION_DOWN:mInitX=%f,mInitY=%f,mLastX=%f,mLastY=%f",mInitX,mInitY,mLastX,mLastY));
                 break;
             case MotionEvent.ACTION_MOVE:
                 int deltaX = (int)(event.getRawX() - mInitInScreenX);
-                int deltaY = (int)(event.getRawY() - mInitInScreenY);
+                int deltaY = (int)(event.getRawY() - getStatusBarHeight() - mInitInScreenY);
+                Log.i(TAG,String.format("ACTION_MOVE:deltaX=%d,deltaY=%d",deltaX,deltaY));
                 if ((Math.abs(deltaX) > mSlop || Math.abs(deltaY) > mSlop)) {
                     //如果大于滑动阈值，则拦截事件(当前view的onTouchEvent事件会执行)
+                    Log.i(TAG,"onInterceptTouchEvent ACTION_MOVE 事件被拦截了");
                     return true;
                 }
                 break;
