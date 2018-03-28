@@ -58,8 +58,7 @@ public class DeepLinkActivity extends Activity{
                 + "&link_name=返回caiyong"
                 + "&backmode=xxl&backurl=caiyong://2018.happy.new.year?msg1=新年快乐&msg2=万事大吉";
 
-        initUrl = "jumeimall://page/alldetail?itemid=ht1499411322p3160352&type=global_pop&source=toutiao&sell_label"
-                + "=xxx&selltype=xxx&sellparams=xxx&backurl=caiyong://2018.happy.new.year?msg1=新年快乐&msg2=万事大吉";
+        initUrl = "jumeimall://page/adcommon?position=home&pagename=%e6%9c%8d%e8%a3%85%e8%bf%90%e5%8a%a8Android%26iPhone&source=toutiao&sell_label=xxx&selltype=xxx&sellparams=xxx&backurl=snssdk141://";
 
         jumpUrlEditText = (EditText)findViewById(R.id.jump_content_et);
         jumpUrlEditText.setText(initUrl);
