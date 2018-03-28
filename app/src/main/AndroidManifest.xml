@@ -78,6 +78,9 @@
 
         <activity android:name="util.learn.caiy.com.activity.VideoCacheActivity"/>
 
+        <activity android:name="util.learn.caiy.com.activity.IndicatorActivity"/>
+
+
         <service android:name="util.learn.caiy.com.service.DragService"/>
     </application>
 

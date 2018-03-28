@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+import util.learn.caiy.com.activity.IndicatorActivity;
 import util.learn.caiy.com.activity.StartActivity;
 import util.learn.caiy.com.activity.VideoCacheActivity;
 import util.learn.caiy.com.recyclerview.RecyclerActivity;
@@ -190,6 +191,16 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, VideoCacheActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        View indicatorView = findViewById(R.id.indicator_btn);
+        indicatorView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, IndicatorActivity.class);
                 startActivity(intent);
             }
         });
