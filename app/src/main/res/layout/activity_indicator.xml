@@ -10,7 +10,7 @@
     <util.learn.caiy.com.view.CustomIndicatorView
             android:id="@+id/indicator_v"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_gravity="bottom"
             android:clipChildren="false"
             android:gravity="bottom"

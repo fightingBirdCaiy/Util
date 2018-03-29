@@ -143,16 +143,16 @@ public class CustomIndicatorView extends HorizontalScrollView{
 
 
         int currentWidth = (int)(normalWidth + (selectedWidth-normalWidth)*positionOffset);
-        itemTextView.setWidth((int)currentWidth);
+        itemTextView.setWidth((int)currentWidth + 3*2);
 
-//        int textSize = (int)itemTextView.getTextSize();
-//        int targetTextSize = (int)(54 + (99-54)*positionOffset);
-//        if(textSize != targetTextSize) {
-//            itemTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, targetTextSize);
-//        }
+        int textSize = (int)itemTextView.getTextSize();
+        int targetTextSize = (int)(54 + (99-54)*positionOffset);
+        if(textSize != targetTextSize) {
+            itemTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, targetTextSize);
+        }
 
-        itemTextView.setScaleX(1+ratio*positionOffset);
-        itemTextView.setScaleY(1+ratio*positionOffset);
+//        itemTextView.setScaleX(1+ratio*positionOffset);
+//        itemTextView.setScaleY(1+ratio*positionOffset);
 
     }
 
