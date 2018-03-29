@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -22,6 +23,7 @@ public class IndicatorAdapter extends PagerAdapter{
         for(int i=0; i<count; i++){
             TextView textView = new TextView(context);
             textView.setText("内容"+ i);
+            textView.setGravity(Gravity.CENTER);
             mDatas.add(textView);
         }
     }

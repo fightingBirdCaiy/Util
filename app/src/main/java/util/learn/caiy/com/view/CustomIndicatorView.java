@@ -1,10 +1,13 @@
 package util.learn.caiy.com.view;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +37,9 @@ public class CustomIndicatorView extends HorizontalScrollView{
     private int mCurrentPosition = 0;
     private float mCurrentPositionOffset = 0F;
 
+    private Paint normalPaint;
+    private Paint selectedPaint;
+
     public CustomIndicatorView(Context context) {
         this(context,null);
     }
@@ -54,6 +60,11 @@ public class CustomIndicatorView extends HorizontalScrollView{
         mContentRootLayout.setOrientation(LinearLayout.HORIZONTAL);
         mContentRootLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT));
         addView(mContentRootLayout);
+
+        normalPaint = new Paint();
+        normalPaint.setTextSize(54F);
+        selectedPaint = new Paint();
+        selectedPaint.setTextSize(99F);
     }
 
 
@@ -89,7 +100,7 @@ public class CustomIndicatorView extends HorizontalScrollView{
             itemView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mViewPager.setCurrentItem(k);
+                    mViewPager.setCurrentItem(k,false);
                 }
             });
             TextView itemTextView = (TextView)itemView.findViewById(R.id.content_tv);
@@ -103,16 +114,18 @@ public class CustomIndicatorView extends HorizontalScrollView{
     }
 
     private void updateViewOnPageScrolled(int position, float positionOffset) {
-        if(position < mSelectedPosition){//从右往左滑动
+        if(position + 1 == mSelectedPosition){//从右往左滑动
             ViewGroup leftTab = (ViewGroup) mContentRootLayout.getChildAt(mSelectedPosition-1);
             ViewGroup currentTab = (ViewGroup) mContentRootLayout.getChildAt(mSelectedPosition);
             updateTabContentView(leftTab,1-positionOffset);
             updateTabContentView(currentTab,positionOffset);
-        }else{//从左往右滑动
+        }else if(position -1 == mSelectedPosition){//从左往右滑动
             ViewGroup currentTab = (ViewGroup) mContentRootLayout.getChildAt(mSelectedPosition);
             ViewGroup rightTab = (ViewGroup) mContentRootLayout.getChildAt(mSelectedPosition + 1);
             updateTabContentView(currentTab,1-positionOffset);
             updateTabContentView(rightTab,positionOffset);
+        }else{
+            //忽略
         }
     }
 
@@ -120,9 +133,17 @@ public class CustomIndicatorView extends HorizontalScrollView{
         ViewGroup itemView = (ViewGroup)view;
         TextView itemTextView = (TextView)itemView.findViewById(R.id.content_tv);
 
-//        itemTextView.setTextSize(36+12F*positionOffset);
-        itemTextView.setScaleX(1+1F*positionOffset);
-        itemTextView.setScaleY(1+1F*positionOffset);
+
+        float normalWidth = normalPaint.measureText(itemTextView.getText().toString());
+        float selectedWidth = selectedPaint.measureText(itemTextView.getText().toString());
+        float ratio = (selectedWidth-normalWidth)/normalWidth;
+        itemTextView.setScaleX(1+ratio*positionOffset);
+        itemTextView.setScaleY(1+ratio*positionOffset);
+
+//        itemTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,54f+(99f-54f)*positionOffset);
+
+//        int currentWidth = (int)(normalWidth + (selectedWidth-normalWidth)*positionOffset);
+        itemTextView.setWidth((int)selectedWidth);
     }
 
     private void updateViewOnPageSelected(int selectedPosition) {
@@ -150,5 +171,12 @@ public class CustomIndicatorView extends HorizontalScrollView{
         itemTextView.setTextColor(Color.parseColor("#ff0000"));
 
         updateTabContentView(view,1);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+
     }
 }

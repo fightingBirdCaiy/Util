@@ -123,17 +123,17 @@
     />
 
     <Button
-            android:id="@+id/video_cache_btn"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="打开VideoCacheActivity(变缓存边播放)"
-    />
-
-    <Button
             android:id="@+id/indicator_btn"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="打开IndicatorActivity(ViewPager导航)"
+    />
+
+    <Button
+            android:id="@+id/video_cache_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="打开VideoCacheActivity(变缓存边播放)"
     />
 
 </LinearLayout>
