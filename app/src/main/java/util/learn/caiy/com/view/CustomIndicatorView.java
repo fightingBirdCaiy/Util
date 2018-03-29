@@ -140,7 +140,7 @@ public class CustomIndicatorView extends HorizontalScrollView{
         itemTextView.setScaleX(1+ratio*positionOffset);
         itemTextView.setScaleY(1+ratio*positionOffset);
 
-//        itemTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,54f+(99f-54f)*positionOffset);
+//        itemTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,(int)(54f+(99f-54f)*positionOffset));
 
 //        int currentWidth = (int)(normalWidth + (selectedWidth-normalWidth)*positionOffset);
         itemTextView.setWidth((int)selectedWidth);
