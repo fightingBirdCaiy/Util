@@ -105,7 +105,12 @@ public class CustomIndicatorView extends HorizontalScrollView{
             });
             TextView itemTextView = (TextView)itemView.findViewById(R.id.content_tv);
             int j = i+1;
-            itemTextView.setText("导航条" + j);
+            if(i%2 == 0){
+                itemTextView.setText("导航条偶数" + j);
+            }else{
+                itemTextView.setText("导航条" + j);
+            }
+
             mContentRootLayout.addView(itemView);
         }
 
@@ -119,13 +124,11 @@ public class CustomIndicatorView extends HorizontalScrollView{
             ViewGroup currentTab = (ViewGroup) mContentRootLayout.getChildAt(mSelectedPosition);
             updateTabContentView(leftTab,1-positionOffset);
             updateTabContentView(currentTab,positionOffset);
-        }else if(position -1 == mSelectedPosition){//从左往右滑动
+        }else {//从左往右滑动
             ViewGroup currentTab = (ViewGroup) mContentRootLayout.getChildAt(mSelectedPosition);
             ViewGroup rightTab = (ViewGroup) mContentRootLayout.getChildAt(mSelectedPosition + 1);
             updateTabContentView(currentTab,1-positionOffset);
             updateTabContentView(rightTab,positionOffset);
-        }else{
-            //忽略
         }
     }
 
@@ -137,13 +140,20 @@ public class CustomIndicatorView extends HorizontalScrollView{
         float normalWidth = normalPaint.measureText(itemTextView.getText().toString());
         float selectedWidth = selectedPaint.measureText(itemTextView.getText().toString());
         float ratio = (selectedWidth-normalWidth)/normalWidth;
+
+
+        int currentWidth = (int)(normalWidth + (selectedWidth-normalWidth)*positionOffset);
+        itemTextView.setWidth((int)currentWidth);
+
+//        int textSize = (int)itemTextView.getTextSize();
+//        int targetTextSize = (int)(54 + (99-54)*positionOffset);
+//        if(textSize != targetTextSize) {
+//            itemTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, targetTextSize);
+//        }
+
         itemTextView.setScaleX(1+ratio*positionOffset);
         itemTextView.setScaleY(1+ratio*positionOffset);
 
-//        itemTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,(int)(54f+(99f-54f)*positionOffset));
-
-//        int currentWidth = (int)(normalWidth + (selectedWidth-normalWidth)*positionOffset);
-        itemTextView.setWidth((int)selectedWidth);
     }
 
     private void updateViewOnPageSelected(int selectedPosition) {

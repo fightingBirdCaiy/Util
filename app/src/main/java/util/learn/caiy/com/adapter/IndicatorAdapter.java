@@ -22,7 +22,11 @@ public class IndicatorAdapter extends PagerAdapter{
     public IndicatorAdapter(Context context,int count){
         for(int i=0; i<count; i++){
             TextView textView = new TextView(context);
-            textView.setText("内容"+ i);
+            if(i%2 == 1){
+                textView.setText("内容奇数" + i);
+            }else {
+                textView.setText("内容" + i);
+            }
             textView.setGravity(Gravity.CENTER);
             mDatas.add(textView);
         }
