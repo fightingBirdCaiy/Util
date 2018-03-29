@@ -82,10 +82,9 @@ public class CustomIndicatorView extends HorizontalScrollView{
             }
 
             @Override
-            public void onPageSelected(int position) {
+            public void onPageSelected(final int position) {
                 Log.i(TAG,"onPageSelected:position=" + position);
                 mSelectedPosition = position;
-                updateViewOnPageSelected(position);
             }
 
             @Override
@@ -100,15 +99,15 @@ public class CustomIndicatorView extends HorizontalScrollView{
             itemView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mViewPager.setCurrentItem(k,false);
+                    mViewPager.setCurrentItem(k);
                 }
             });
             TextView itemTextView = (TextView)itemView.findViewById(R.id.content_tv);
             int j = i+1;
             if(i%2 == 0){
-                itemTextView.setText("导航条偶数" + j);
-            }else{
                 itemTextView.setText("导航条" + j);
+            }else{
+                itemTextView.setText("导航" + j);
             }
 
             mContentRootLayout.addView(itemView);
@@ -130,6 +129,9 @@ public class CustomIndicatorView extends HorizontalScrollView{
             updateTabContentView(currentTab,1-positionOffset);
             updateTabContentView(rightTab,positionOffset);
         }
+        if(mSelectedPosition == position && positionOffset == 0f){
+            updateViewOnPageSelected(mSelectedPosition);
+        }
     }
 
     private void updateTabContentView(View view, float positionOffset) {
@@ -143,7 +145,7 @@ public class CustomIndicatorView extends HorizontalScrollView{
 
 
         int currentWidth = (int)(normalWidth + (selectedWidth-normalWidth)*positionOffset);
-        itemTextView.setWidth((int)currentWidth + 3*2);
+//        itemTextView.setWidth((int)currentWidth + 3*2);
 
         int textSize = (int)itemTextView.getTextSize();
         int targetTextSize = (int)(54 + (99-54)*positionOffset);
